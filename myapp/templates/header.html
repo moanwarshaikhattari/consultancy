@@ -1,0 +1,23 @@
+{% load static %}
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="{% static 'img/neoolive-logo.png' %}" width="100%" height="100%" alt="">
+        <!-- <img src="static/img/neoolive-logo.jpg" alt=""> -->
+        <!-- <h1 class="sitename">NeoOlive</h1> -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home' %}" class="{% if request.path == '/' %} active {% endif %}">Home</a></li>
+          <li><a href="{% url 'about' %}" class="{% if request.path == '/about-us/' %} active {% endif %}">About us</a></li>
+          <li><a href="{% url 'services' %}" class="{% if request.path == '/services/' %} active {% endif %}">Services</a></li>
+          <li><a href="{% url 'contact' %}" class="{% if request.path == '/contact-us/' %} active {% endif %}">Contact us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>

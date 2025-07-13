@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "head.html" %}
+
+</head>
+
+
+<body class="index-page">
+
+  
+{% include "header.html" %}
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="static/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div id="" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="container position-relative">
+
+          <div class="carousel-item active">
+            <div class="carousel-container">
+              <h1>Welcome to NeoOlive Infotech</h1>
+              <p>NeoOlive Infotech is a forward-thinking startup software development company, rapidly gaining recognition for its innovative and transformative technology solutions. Dedicated to delivering customized software services, NeoOlive Infotech focuses on empowering businesses across diverse industries with scalable, secure, and smart digital solutions tailored to their unique needs.</p>
+              {% comment %} <a href="#about" class="btn-get-started">Read More</a> {% endcomment %}
+            </div>
+          </div><!-- End Carousel Item -->
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about section ">
+
+      <div class="container">
+
+        <div class="container py-5">
+          <div class="row align-items-center gy-5">
+
+            <!-- Image Section -->
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+              <div class="rounded-4 overflow-hidden shadow-lg">
+                <img src="static/img/about.jpg" class="img-fluid w-100" alt="About Us Image" style="object-fit: cover;">
+              </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="p-3">
+                <p class="text-muted fst-italic mb-2">We're a professional web design and development company passionate about delivering innovative digital solutions.</p>
+                
+                <h2 class="fw-bold mb-4 text-primary">Who We Are</h2>
+
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-3">
+                    <i class="bi bi-check2-circle text-success me-2 fs-5"></i>
+                    <span>Expertise in delivering custom and scalable digital platforms.</span>
+                  </li>
+                  <li class="mb-3">
+                    <i class="bi bi-check2-circle text-success me-2 fs-5"></i>
+                    <span>Client-focused approach with a track record of results.</span>
+                  </li>
+                  <li class="mb-3">
+                    <i class="bi bi-check2-circle text-success me-2 fs-5"></i>
+                    <span>We blend creativity, strategy, and technology to craft seamless digital experiences.</span>
+                  </li>
+                </ul>
+
+                <p class="text-secondary">Our team brings dedication, innovation, and attention to detail to every project. Whether you're a startup or a large enterprise, we help turn your vision into reality.</p>
+
+                <div class="mt-4 text-start">
+                  <a href="{% url 'about' %}">
+                    <button class="btn btn-dark px-4 py-2 rounded-pill">
+                      Read More <i class="fa-solid fa-arrow-right ms-2 fa-fade"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </section><!-- /About Section -->
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section light-background">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Services</h2>
+      </div>
+      <!-- End Section Title -->
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Nesciunt Mete</h3>
+              </a>
+              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Eosle Commodi</h3>
+              </a>
+              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-teal position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Ledo Markt</h3>
+              </a>
+              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item item-red position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Asperiores Commodit</h3>
+              </a>
+              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+              <a href="service-details.html" class="stretched-link"></a>
+            </div>
+          </div>
+          <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+            <a href="{% url 'services' %}">
+              <button class="btn btn-dark px-4 py-2 rounded-pill">
+                Read More <i class="fa-solid fa-arrow-right ms-2 fa-fade"></i>
+              </button>
+            </a>
+          </div>
+          <!-- End Service Item -->
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <!-- <p class="mb-3 fs-5">Our expertise</p> -->
+        <h2>Exclusive Features</h2>
+        <p>Our exclusive features enable it to provide innovative and high-quality solutions that meet the unique needs of businesses. </p>
+        <p>Its commitment to customer satisfaction, use of latest technologies, and cost-effective solutions make</p>
+        <p>it a top choice for businesses looking for software development services.</p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container py-5">
+        <div class="row gy-5">
+
+          <!-- Feature Item 1 -->
+          <div class="col-12">
+            <div class="row align-items-center shadow-sm rounded-4 p-4 bg-white">
+              <div class="col-md-5 text-center" data-aos="zoom-out" data-aos-delay="100">
+                <img src="static/img/features-1.svg" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="fw-bold text-primary mb-3">Powerful & Reliable Infrastructure</h3>
+                <p class="fst-italic">We ensure your digital presence is fast, secure, and scalable.</p>
+                <ul class="list-unstyled mt-3">
+                  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Ullam est qui quos consequatur eos accusamus.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Item 2 -->
+          <div class="col-12">
+            <div class="row align-items-center shadow-sm rounded-4 p-4 bg-light">
+              <div class="col-md-5 order-1 order-md-2 text-center" data-aos="zoom-out" data-aos-delay="200">
+                <img src="static/img/features-2.svg" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="fw-bold text-primary mb-3">Timely Support and Service</h3>
+                <p class="fst-italic">Dedicated support team to keep your business running smoothly.</p>
+                <p>We work closely with our clients to ensure their goals are achieved with precision and care.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Item 3 -->
+          <div class="col-12">
+            <div class="row align-items-center shadow-sm rounded-4 p-4 bg-white">
+              <div class="col-md-5 text-center" data-aos="zoom-out">
+                <img src="static/img/features-3.svg" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-7" data-aos="fade-up">
+                <h3 class="fw-bold text-primary mb-3">User-Centric Design Philosophy</h3>
+                <p>Our design strategy is focused on real users to create intuitive and delightful interfaces.</p>
+                <ul class="list-unstyled mt-3">
+                  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Item 4 -->
+          <div class="col-12">
+            <div class="row align-items-center shadow-sm rounded-4 p-4 bg-light">
+              <div class="col-md-5 order-1 order-md-2 text-center" data-aos="zoom-out">
+                <img src="static/img/features-4.svg" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
+                <h3 class="fw-bold text-primary mb-3">Secured & Scalable Systems</h3>
+                <p class="fst-italic">Security and scalability are at the core of everything we build.</p>
+                <p>From initial deployment to growth stages, we ensure robust data handling and user privacy compliance.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </section><!-- /Features Section -->
+
+  </main>
+  {% include "get-in-touch.html" %}
+  {% include "footer.html" %}
+
+  
+
+</body>
+
+</html>
