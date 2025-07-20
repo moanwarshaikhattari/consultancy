@@ -3,7 +3,13 @@
 <html lang="en">
 <head>
   {% include "head.html" %}
-
+  <style>
+    .error{
+      font-size:12px;
+      margin-top:5px;
+    }
+  
+  </style>
 </head>
 
 <body class="contact-page">
@@ -111,42 +117,47 @@
               </div>
             </form>
           </div> -->
-          <div class="col-lg-6">
+          <div class="col-lg-6 shadow">
             {% if message %}
               <div class="alert alert-success mt-3">{{ message }}</div>
             {% endif %}
-            <form method="post" class="was-validation" data-aos="fade-up" data-aos-delay="100">
+            <form method="post" id='contactForm' class=" p-3 was-validation" data-aos="fade-up" data-aos-delay="100">
               {% csrf_token %}
-              {% if error %}
+              {% comment %} {% if error %}
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                    All field is required!
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-              {% endif %}
+              {% endif %} {% endcomment %}
               <div class="row gy-4">
 
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Your Name">
+                  <div class="text-danger error" id="errorName"></div>
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="number" class="form-control" name="number" placeholder="Phone No."
+                  <input type="number" class="form-control" name="number" placeholder="Phone Number"
                   maxlength="10"
                   inputmode="numeric"
                   pattern="\d{10}"
                   oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);">
+                  <div class="text-danger error" id="errorNumber"></div>
                 </div>
 
                 <div class="col-md-12">
                    <input type="email" class="form-control" name="email" placeholder="Your Email">
+                    <div class="text-danger error" id="errorEmail"></div>
                 </div>
 
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="4" placeholder="Message"></textarea>
+                   <div class="text-danger error" id="errorMessage"></div>
                 </div>
 
                 <div class="col-md-12 text-center">
                   <button type="submit" class="btn btn-outline-dark" id="submitBtn">Send Message</button>
+
                 </div>
 
               </div>
@@ -169,7 +180,7 @@
 
   </main>
   {% include "footer.html" %}
-  <script>
+  {% comment %} <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.querySelector('form');
       const submitBtn = document.getElementById('submitBtn');
@@ -179,7 +190,55 @@
         submitBtn.innerHTML = 'Processing...';
       });
     });
-  </script>
+  </script> {% endcomment %}
+
+ <script>
+  document.getElementById("contactForm").onsubmit = function (e) {
+    const submitBtn = document.getElementById('submitBtn');
+    // Clear previous errors
+    document.getElementById("errorName").innerText = "";
+    document.getElementById("errorNumber").innerText = "";
+    document.getElementById("errorEmail").innerText = "";
+    document.getElementById("errorMessage").innerText = "";
+
+    let valid = true;
+
+    const name = document.querySelector("[name='name']").value.trim();
+    const number = document.querySelector("[name='number']").value.trim();
+    const email = document.querySelector("[name='email']").value.trim();
+    const message = document.querySelector("[name='message']").value.trim();
+
+    if (name === "") {
+      document.getElementById("errorName").innerText = "Name is required.";
+      valid = false;
+    }
+
+    if (!/^\d{10}$/.test(number)) {
+      document.getElementById("errorNumber").innerText = "Phone number must be 10 digits.";
+      valid = false;
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      document.getElementById("errorEmail").innerText = "Enter a valid email address.";
+      valid = false;
+    }
+
+    if (message === "") {
+      document.getElementById("errorMessage").innerText = "Message is required.";
+      valid = false;
+    }
+
+     // If form is valid, show processing
+    if (valid) {
+      submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span> Processing...`;
+      submitBtn.disabled = true;
+    } else {
+      e.preventDefault(); // stop form from submitting
+    }
+  };
+</script>
+
+
 
 </body>
 

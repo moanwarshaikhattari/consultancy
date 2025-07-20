@@ -34,8 +34,8 @@ def contact(request):
         email = request.POST.get('email')
         msg = request.POST.get('message')
          # Check for empty fields
-        if not all([name, number, email]):
-            return render(request, 'contact-us.html', {**data, 'error': True})
+        # if not all([name, number, email]):
+        #     return render(request, 'contact-us.html', {**data, 'error': True})
         # if name and number and email and msg:
             # Send mail to admin
         send_mail(
